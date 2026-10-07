@@ -13,6 +13,7 @@ Servidor Minecraft Java **1.21.1 + Fabric** na AWS (EC2 t4g.medium, us-east-1, c
 | `scripts/provision.sh` | Cria SG, EC2 e Elastic IP do zero |
 | `scripts/user-data.sh` | Bootstrap da EC2 (swap + Docker) |
 | `scripts/run.sh` | (Re)cria o container `mc` |
+| `scripts/deploy.sh` | Envia `mods.txt` + `run.sh` pra EC2 e reinicia |
 
 ## Administração
 
@@ -22,4 +23,11 @@ sudo docker logs -f mc          # logs
 sudo docker exec -it mc rcon-cli # console
 ```
 
-Mundo, configs e mods ficam em `/opt/minecraft/data` na EC2. Para adicionar mods, inclua o slug do Modrinth em `MODRINTH_PROJECTS` no `run.sh` e rode-o de novo.
+Mundo, configs e mods ficam em `/opt/minecraft/data` na EC2. ## Mods
+
+1. Edite `mods.txt` (slug do Modrinth, um por linha; fixe versão com `slug:versao`).
+2. Rode `./scripts/deploy.sh`.
+
+Mods removidos da lista são apagados do servidor (`REMOVE_OLD_MODS`). Mods que também precisam estar no cliente: avise a galera.
+
+Se o SSH der timeout, seu IP mudou — atualize a regra da porta 22 no `minecraft-sg`.
