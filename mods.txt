@@ -1,12 +1,22 @@
-# Mods do SERVIDOR + CLIENTE (slugs do Modrinth). Um por linha; "#" comenta.
+# Mods do SERVIDOR + CLIENTE (slugs do Modrinth, NeoForge 1.21.1). Um por linha; "#" comenta.
 # Fixar versão: slug:versao. Dependências são baixadas automaticamente.
 # Depois de editar: ./scripts/deploy.sh && ./scripts/build-client.py
 
-# --- Base / performance ---
-fabric-api
-lithium
+# --- Performance ---
+modernfix
 ferrite-core
-krypton
+
+# --- Tecnologia / fábricas / automação ---
+create
+createaddition
+create-enchantment-industry
+ae2
+extended-ae
+applied-mekanistics
+mekanism
+mekanism-generators
+mekanism-tools
+powah
 
 # --- Mundo / exploração ---
 terralith
@@ -17,13 +27,11 @@ dungeons-and-taverns
 waystones
 
 # --- Gameplay ---
-farmers-delight-refabricated
+farmers-delight
 supplementaries
 comforts
 travelersbackpack
-toms-storage
 naturalist
-friends-and-foes
 
 # --- QoL ---
 jade

@@ -10,7 +10,7 @@ SG=$(aws ec2 create-security-group --group-name minecraft-sg --description "Mine
 aws ec2 authorize-security-group-ingress --group-id "$SG" --protocol tcp --port 25565 --cidr 0.0.0.0/0 >/dev/null
 aws ec2 authorize-security-group-ingress --group-id "$SG" --protocol tcp --port 22 --cidr "$MYIP/32" >/dev/null
 UD=$(mktemp); { cat "$DIR/user-data.sh"; echo 'cat > /opt/minecraft/run.sh <<"RUN"'; cat "$DIR/run.sh"; echo 'RUN'; echo 'chmod +x /opt/minecraft/run.sh && /opt/minecraft/run.sh'; } > "$UD"
-IID=$(aws ec2 run-instances --image-id "$AMI" --instance-type t4g.medium --key-name artisaan-access \
+IID=$(aws ec2 run-instances --image-id "$AMI" --instance-type t4g.large --key-name artisaan-access \
   --security-group-ids "$SG" \
   --block-device-mappings 'DeviceName=/dev/sda1,Ebs={VolumeSize=30,VolumeType=gp3}' \
   --user-data "file://$UD" \

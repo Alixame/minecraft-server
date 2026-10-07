@@ -1,10 +1,10 @@
 # minecraft-server
 
-Servidor Minecraft Java **1.21.1 + Fabric** na AWS (EC2 t4g.medium, us-east-1, conta `artisaan`), rodando em Docker com [`itzg/minecraft-server`](https://github.com/itzg/docker-minecraft-server).
+Servidor Minecraft Java **1.21.1 + NeoForge** na AWS (EC2 t4g.large 8GB, us-east-1, conta `artisaan`), rodando em Docker com [`itzg/minecraft-server`](https://github.com/itzg/docker-minecraft-server).
 
 - **Endereço:** `52.70.162.32:25565` (Elastic IP)
-- **Modpack:** vanilla+ (lista em `mods.txt`; só-cliente em `client-mods.txt`)
-- **Cliente:** Fabric 1.21.1 + zip gerado por `./scripts/build-client.py` (`dist/ignatioon-mc-client.zip`)
+- **Modpack:** tecnologia (Create, AE2, Mekanism, Powah) + vanilla+ (lista em `mods.txt`; só-cliente em `client-mods.txt`)
+- **Cliente:** NeoForge 21.1.x (MC 1.21.1) + zip gerado por `./scripts/build-client.py` (`dist/ignatioon-mc-client.zip`)
 
 ## Scripts
 
@@ -31,3 +31,5 @@ Mundo, configs e mods ficam em `/opt/minecraft/data` na EC2. ## Mods
 Mods removidos da lista são apagados do servidor (`REMOVE_OLD_MODS`). Mods que também precisam estar no cliente: avise a galera.
 
 Se o SSH der timeout, seu IP mudou — atualize a regra da porta 22 no `minecraft-sg`.
+
+Tutorial pros jogadores: [TUTORIAL.md](TUTORIAL.md)

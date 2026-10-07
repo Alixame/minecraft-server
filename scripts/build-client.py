@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Gera dist/ignatioon-mc-client.zip com os mods (Fabric 1.21.1) + dependências."""
+"""Gera dist/ignatioon-mc-client.zip com os mods (NeoForge 1.21.1) + dependências."""
 import json, pathlib, urllib.parse, urllib.request, zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-MC, LOADER = "1.21.1", "fabric"
+MC, LOADER = "1.21.1", "neoforge"
 API = "https://api.modrinth.com/v2"
 
 def get(url):

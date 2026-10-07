@@ -1,5 +1,4 @@
 # Mods SÓ DO CLIENTE (entram no zip, não no servidor)
 sodium
 iris
-modmenu
 entityculling
