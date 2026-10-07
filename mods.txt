@@ -1,11 +1,33 @@
-# Mods do servidor (slugs do Modrinth). Um por linha; "#" comenta.
-# Versão do mod: slug:versao  (ex: lithium:mc1.21.1-0.15.4)
-# Depois de editar: ./scripts/deploy.sh
+# Mods do SERVIDOR + CLIENTE (slugs do Modrinth). Um por linha; "#" comenta.
+# Fixar versão: slug:versao. Dependências são baixadas automaticamente.
+# Depois de editar: ./scripts/deploy.sh && ./scripts/build-client.py
 
-# Base
+# --- Base / performance ---
 fabric-api
-
-# Performance (só servidor)
 lithium
 ferrite-core
 krypton
+
+# --- Mundo / exploração ---
+terralith
+yungs-better-dungeons
+yungs-better-mineshafts
+yungs-better-strongholds
+dungeons-and-taverns
+waystones
+
+# --- Gameplay ---
+farmers-delight-refabricated
+supplementaries
+comforts
+travelersbackpack
+toms-storage
+naturalist
+friends-and-foes
+
+# --- QoL ---
+jade
+appleskin
+emi
+xaeros-minimap
+xaeros-world-map

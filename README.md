@@ -3,8 +3,8 @@
 Servidor Minecraft Java **1.21.1 + Fabric** na AWS (EC2 t4g.medium, us-east-1, conta `artisaan`), rodando em Docker com [`itzg/minecraft-server`](https://github.com/itzg/docker-minecraft-server).
 
 - **Endereço:** `52.70.162.32:25565` (Elastic IP)
-- **Mods (servidor):** Fabric API, Lithium, FerriteCore, Krypton
-- **Cliente:** Fabric 1.21.1 + Fabric API
+- **Modpack:** vanilla+ (lista em `mods.txt`; só-cliente em `client-mods.txt`)
+- **Cliente:** Fabric 1.21.1 + zip gerado por `./scripts/build-client.py` (`dist/ignatioon-mc-client.zip`)
 
 ## Scripts
 
@@ -26,7 +26,7 @@ sudo docker exec -it mc rcon-cli # console
 Mundo, configs e mods ficam em `/opt/minecraft/data` na EC2. ## Mods
 
 1. Edite `mods.txt` (slug do Modrinth, um por linha; fixe versão com `slug:versao`).
-2. Rode `./scripts/deploy.sh`.
+2. Rode `./scripts/deploy.sh` (servidor) e `./scripts/build-client.py` (zip pros jogadores).
 
 Mods removidos da lista são apagados do servidor (`REMOVE_OLD_MODS`). Mods que também precisam estar no cliente: avise a galera.
 
