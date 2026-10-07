@@ -1,0 +1,11 @@
+# Mods do servidor (slugs do Modrinth). Um por linha; "#" comenta.
+# Versão do mod: slug:versao  (ex: lithium:mc1.21.1-0.15.4)
+# Depois de editar: ./scripts/deploy.sh
+
+# Base
+fabric-api
+
+# Performance (só servidor)
+lithium
+ferrite-core
+krypton
